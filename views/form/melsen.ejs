@@ -1,0 +1,38 @@
+<script src="/public/js/melsen/next.js"></script>
+<style>
+    .sub:hover {
+        border-radius: 5px;
+        background-color: rgba(226, 40, 239, 0.687);
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        outline: none;
+        border: none;
+        transition: 0.4s;
+        box-shadow: 3px 3px 3px rgba(2, 240, 141, 0.897);
+    }
+
+    .sub {
+        transition: 0.4s;
+        border-radius: 5px;
+        background-color: rgba(2, 240, 141, 0.897);
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        outline: none;
+        border: none;
+        box-shadow: 3px 3px 3px rgba(226, 40, 239, 0.687);
+    }
+</style>
+<div class="input">
+    <form action="/melsen" method="post">
+        <input type="text" placeholder="nama" name="nama" id="nextt" required> <br>
+        <textarea name="pesan" id="pesan" cols="30" rows="10" placeholder="pesan" required></textarea><br>
+        <p id="next"></p>
+        <button type="submit" class="sub">Kirim</button>
+    </form>
+</div>

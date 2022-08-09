@@ -1,0 +1,22 @@
+<script>
+    function Sub(){
+        var x = document.getElementById('nama').value;
+        alert('terimakasih' + " "+x)
+    }
+</script>
+<hr/>
+<div class="container">
+    <h2></h2>
+    <form action="/" method="POST">
+        <div class="form-group mb-3">
+        <label>Nama</label>
+        <input type="text" class="form-control" placeholder="First name" name="nama" id="nama" required>
+        </div>
+        <div class="form-group mb-3">
+            <label>Pesan</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="saran" required></textarea>
+        </div>
+        <div class="d-grid mt-3">
+        <button type="submit" class="btn btn-danger" onclick="Sub()">Submit</button>
+        </div>
+</form>
