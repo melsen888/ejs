@@ -28,22 +28,26 @@ app.get ('/ipa',(req, res) => {
 
 app.get ('/melsen',(req, res, next) => {
     const ip = req.clientIp;
-    console.log(`Melsen Page \n ip : ${ip}`)
+    console.log(`Get /melsen \n ip : ${ip}
+        `)
     res.render(__dirname + "/views/melsen/melsen.ejs");
-    res.end(ip);
 })
-
 
 //! get form data from /melsen 
 //*post data from /melsen/data 
 app.post('/melsen', encodeUrl, (req, res) => {
+    const ip = req.clientIp;
+    var today = new Date();
+    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    console.log(`Get /melsen \n ip : ${ip} \n date : ${date}`)
     console.log('melsen:', req.body)
     res.render(__dirname + '/views/melsen/melsen.ejs')
+    res.end(ip);
 })
 
 app.use((err, req, res, next) => {
     console.error(err.stack)
-    res.status(500).send('hem... 500 error: ' + err.stack)
+    res.status(404).send('hem... 500 error: ' + err.stack)
 })
 
 app.listen(port)
