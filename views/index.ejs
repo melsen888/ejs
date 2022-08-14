@@ -62,7 +62,7 @@ header {
     color: rgb(0,228,255);
 }
 
-.main{background: url() #0f1011;background-repeat: no-repeat; background-position-x: 50%;background-size: 30vmax;background-position-y: 38%;text-align: center; font-size: 200%; padding-top: 15vh;margin-top: 15vh; padding-bottom: 8%;}
+.main{background: url(/image/television.png) #0f1011;background-repeat: no-repeat; background-position-x: 50%;background-size: 30vmax;background-position-y: 38%;text-align: center; font-size: 200%; padding-top: 15vh;margin-top: 15vh; padding-bottom: 8%;}
 .title p {font-size: 50%; color: #555; padding-top: 2vh;}.title h1 {color: rgb(0, 229, 255); font-size: 100%;}
 .link{display: flex; flex-direction: row; text-align: center; padding-top: 5vh; justify-content: center;padding: 5%;padding-bottom: 0%;}
 .start a {background-color: rgb(0, 195, 255); text-decoration: none; margin-right: 2vh; color: black; padding: 16px 22px;font-size: 65%;}.link{margin-top: 15vh}
@@ -86,19 +86,6 @@ header {
 .qrcode canvas{height: 100px;}
 
 /* link */
-.row {
-    display: flex;
-}
-.col {
-    margin-top: 10px;
-    margin-right: 10px;
-    flex-direction: row;
-}
-hr {
-    margin-top: 20px;
-    margin-bottom: 5px;
-    border-top: solid 5px black;
-}
 </style>
 <body>
     <header>
@@ -129,17 +116,14 @@ hr {
                     <h1></h1>
                     <a href="/" style="color: white; font-size: 15px; text-decoration: none;">www.melsencorp.com</a>
                     <p>&copy 2022-<span id="year"></span></p>
-                    <script type="text/javascript">
-        				document.getElementById('year').innerHTML = (new Date().getFullYear());
-                    </script>
                 </a>
             </div>
             <div class="link">
                 <div class="start">
-                    <a href="/ips">Get Started</a>
+                    <a href="/getstarted">Get Started</a>
                 </div>
                 <div class="tutorial">
-                    <a href="/melsen">message for us</a>
+                    <a href="/tutorial">Take the Tutorial</a>
                 </div>
             </div>
         </div>
@@ -148,21 +132,30 @@ hr {
     <div class="info">
         <div class="learn">
             <h1>MelsenCorp</h1>
-            <div class="row">
-                <div class="col">
-                    <img src="/public/img/svg/atom-cube-svgrepo-com.svg" alt="" style="width: 78.8303px; height: 264.821px; border-width: 1px; top: 291.918px; left: 27.0979px;">
-                </div>
-                <div class="col">
-                    <p>Hii.. Kami  adalah perusahan kecil yang bergerak di bidang 
-                    <i><u><a href="https://en.wikipedia.org/wiki/Information_technology" title = "wikipedia">information and technology</a></u></i>.</p>
-                    <hr>
-                    <a href="https://github.com/melsen888">Github</a> | <a href="https://t.me/melsencorp">Telegram</a>
-                </div>
-            </div>
+            <p>Hii.. Kami  adalah perusahan yang bergerak di bidang 
+                <i><u><a href="https://en.wikipedia.org/wiki/Information_technology" title = "wikipedia">technology and information</a></u></i>
+            .</p>
         </div>
     </div>
+    <div class="qrcode">
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"><canvas id="canvas" height="20" width="20"></canvas></a>
+    </div>
+    <h1 id="code"></h1>
+
+
+    <script src="/qrcode"></script>
+    <script>
+        // var qr = prompt("blac")
+        QRCode.toCanvas(document.getElementById('canvas'), "https://www.youtube.com/watch?v=dQw4w9WgXcQ", function (error) {
+            if (error) console.error(error)
+            console.log('success!');
+        })
+        // document.getElementById('code').innerHTML = qr;
+
+        // year
+        document.getElementById('year').innerHTML = (new Date().getFullYear());
+</script>
     <main>
-        
     </main>
 </body>
 </html>
