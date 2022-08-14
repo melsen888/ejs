@@ -26,6 +26,10 @@ app.get ('/ipa',(req, res) => {
     res.render(__dirname + "/views/ipa/index.ejs");
 })
 
+app.get ('/alfa',(req, res) => {
+    res.render(__dirname + "/views/alfa/alfa.ejs");
+})
+
 app.get ('/melsen',(req, res, next) => {
     const ip = req.clientIp;
     console.log(`Get /melsen \n ip : ${ip}
@@ -42,6 +46,16 @@ app.post('/melsen', encodeUrl, (req, res) => {
     console.log(`Get /melsen \n ip : ${ip} \n date : ${date}`)
     console.log('melsen:', req.body)
     res.render(__dirname + '/views/melsen/melsen.ejs')
+    res.end(ip);
+})
+
+app.post('/kenalan', encodeUrl, (req, res) => {
+    const ip = req.clientIp;
+    var today = new Date();
+    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    console.log(`Get /melsen \n ip : ${ip} \n date : ${date}`)
+    console.log('melsen:', req.body)
+    res.render(__dirname + '/views/alfa/alfa.ejs')
     res.end(ip);
 })
 
